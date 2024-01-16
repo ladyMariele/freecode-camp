@@ -11,16 +11,16 @@ button.addEventListener("click", function() {
     
     let textInputRegex = textInputText.replace(/[^a-zA-Z0-9]/gi, "").toLowerCase();
     
-    for ( let i = textInputRegex.length; i >= 0 ; i-- ) {
+    for ( let i = textInputRegex.length - 1; i >= 0 ; i-- ) {
         reverseSpell += (textInputRegex[i])
     }
+    console.log(reverseSpell);
     
     if (textInputText === "") {
         alert("Please input a value");
-    } else if (undefined + textInputRegex === reverseSpell) {
+    } else if (textInputRegex === reverseSpell) {
         result.innerText = `${textInputText} is a palindrome`
     } else {
         result.innerText = `${textInputText} is not a palindrome`
     }
 })
-
